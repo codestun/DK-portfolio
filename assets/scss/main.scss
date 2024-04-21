@@ -1,3 +1,6 @@
+$background-color: #00252F;
+$lighter-color: lighten($background-color, 5%);
+
 * {
   margin: 0;
   padding: 0;
@@ -82,7 +85,7 @@ header {
     }
 
     &.is-scrolling {
-      background-color: #00252F;
+      background-color: $background-color;
 
       .container {
         padding-top: 16px;
@@ -113,7 +116,7 @@ main {
       right: 0;
       bottom: 0;
       z-index: 0;
-      background-color: #00252F;
+      background-color: $background-color;
       opacity: 0.8;
     }
 
@@ -244,6 +247,68 @@ main {
 
     .center {
       text-align: center;
+    }
+  }
+
+  .contact {
+    background-color: $lighter-color;
+
+    .container {
+      padding-top: 64px;
+      padding-bottom: 64px;
+
+      h2 {
+        color: #FFF;
+      }
+
+      p {
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      form {
+        display: block;
+        margin: 0 auto;
+        max-width: 680px;
+
+        .form-grid {
+          display: grid;
+          grid-gap: 16px;
+          grid-template-columns: repeat(2, 1fr);
+          margin-bottom: 16px;
+
+          .form-element,
+          .form-area {
+            appearance: none;
+            border: none;
+            outline: none;
+            background: none;
+
+            display: block;
+            width: 100%;
+            background-color: #FFF;
+            border-radius: 8px;
+
+            padding: 16px;
+            font-size: 20px;
+            color: #313131;
+
+            &::placeholder {
+              color: #AAA;
+            }
+          }
+
+          .form-area {
+            grid-column: 1/-1;
+          }
+        }
+
+        .right-align {
+          text-align: right;
+        }
+      }
     }
   }
 
