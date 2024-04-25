@@ -370,11 +370,17 @@ main {
           color: white;
           padding: 5px 10px;
           border-radius: 4px;
-          z-index: 100;
+          z-index: 97;
         }
 
         .nav-active .project .mobile-tooltip {
           display: none;
+        }
+
+        .project:hover .mobile-tooltip,
+        .project:focus .mobile-tooltip {
+          display: block;
+          /* This will only show tooltips on hover or focus */
         }
 
         @media (max-width: 768px) {
