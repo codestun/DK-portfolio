@@ -211,7 +211,7 @@ main {
     display: flex;
     align-items: center;
 
-    background-image: url('../images//banner.jpg');
+    background-image: url('../images/banner.jpg');
     background-position: top right;
     background-size: cover;
 
@@ -314,7 +314,7 @@ main {
       grid-gap: 16px;
       margin-bottom: 32px;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -323,30 +323,34 @@ main {
       }
 
       .project {
-        background-image: url('../images/pokedex-app.jpg');
         position: relative;
         background-size: cover;
         border-radius: 16px;
         overflow: hidden;
+        height: 350px;
+
+        &:nth-child(1) {
+          background-image: url('../images/pokedex-app-project.jpeg');
+        }
 
         &:nth-child(2) {
-          background-image: url('../images/event-explorer.jpg');
+          background-image: url('../images/event-explorer-project.jpeg');
         }
 
         &:nth-child(3) {
-          background-image: url('../images/custom-project.png');
+          background-image: url('../images/chat-app-project.jpeg');
         }
 
         &:nth-child(4) {
-          background-image: url('../images/custom-project.png');
+          background-image: url('../images/FlickPick_API-project.jpeg');
         }
 
         &:nth-child(5) {
-          background-image: url('../images/FlickPick-react.png');
+          background-image: url('../images/FlickPick-react-project.jpeg');
         }
 
         &:nth-child(6) {
-          background-image: url('../images/FlickPick-angular.png');
+          background-image: url('../images/FlickPick-Angular-project.jpeg');
         }
 
         &:hover {
@@ -455,6 +459,45 @@ main {
     }
   }
 }
+
+.page-footer {
+  color: #313131;
+  font-weight: 700;
+  padding: 32px;
+  margin: 0 auto;
+  text-align: center;
+
+  p {
+    margin-bottom: 16px;
+  }
+}
+
+
+.social-icon {
+  img {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+
+    margin: 0 5px;
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.social-icon a:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+
 
 @media (max-width: 767px) {
   .hide-mob {
