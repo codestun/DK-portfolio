@@ -12,26 +12,37 @@ window.onload = function () {
     }
   });
 
-  // Select hamburger menu button and mobile navigation menu
-  const menu_btn = document.querySelector('.hamburger');
-  const mobile_menu = document.querySelector('.mobile-nav');
+  const menuBtn = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-nav');
+  const projects = document.querySelectorAll('.project');
 
-  // Add click event listener to hamburger menu button
-  menu_btn.addEventListener('click', function () {
-    // Toggle 'is-active' class on hamburger menu button and mobile navigation menu
-    menu_btn.classList.toggle('is-active');
-    mobile_menu.classList.toggle('is-active');
+  // Toggle mobile navigation visibility
+  menuBtn.addEventListener('click', function () {
+    this.classList.toggle('is-active');
+    mobileMenu.classList.toggle('is-active');
+    // Hide tooltips when mobile navigation is activated
+    projects.forEach(project => {
+      const tooltip = project.querySelector('.mobile-tooltip');
+      if (mobileMenu.classList.contains('is-active')) {
+        tooltip.style.display = 'none';
+      } else {
+        tooltip.style.display = 'block';
+      }
+    });
   });
 
-  // Add click event listeners to each link in the mobile navigation menu
+  // Event listener for mobile nav links
   document.querySelectorAll('.mobile-nav a').forEach(link => {
     link.addEventListener('click', function () {
-      // Check if mobile menu is currently active
-      if (mobile_menu.classList.contains('is-active')) {
-        // If mobile menu is active, remove 'is-active' class from hamburger menu button and mobile navigation menu
-        menu_btn.classList.remove('is-active');
-        mobile_menu.classList.remove('is-active');
-      }
+      menuBtn.classList.remove('is-active');
+      mobileMenu.classList.remove('is-active');
+    });
+  });
+
+  // Click event to hide tooltips when a project is clicked
+  projects.forEach(project => {
+    project.addEventListener('click', function () {
+      this.querySelector('.mobile-tooltip').style.display = 'none';
     });
   });
 }
