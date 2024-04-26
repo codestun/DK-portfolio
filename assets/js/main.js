@@ -45,13 +45,12 @@ window.onload = function () {
     // Handle tooltip visibility on touch devices
     projects.forEach(project => {
       project.addEventListener('click', function () {
-        const tooltip = this.querySelector('.mobile-tooltip');
-        const isVisible = tooltip.style.display === 'block';
-        hideAllTooltips(); // First hide all tooltips
-        tooltip.style.display = isVisible ? 'none' : 'block'; // Then toggle the clicked one
+        // Hide all tooltips first
+        hideAllTooltips();
+        // You can handle other logic here if needed, for example showing project content
       });
     });
-  } // No else branch is needed because we do not handle clicks for tooltips on non-touch devices
+  }
 
   function hideAllTooltips() {
     projects.forEach(project => {
