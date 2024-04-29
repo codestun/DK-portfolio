@@ -276,6 +276,10 @@ main {
         }
       }
     }
+
+    &.banner-case-study {
+      background-image: url('../images/movies.jpg');
+    }
   }
 
   .abouts {
@@ -623,6 +627,287 @@ main {
       text-align: center;
     }
   }
+
+  .case-study {
+    background-color: #EEE;
+    padding: 64px 0;
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 128px;
+
+      @media (max-width: 1024px) {
+        padding: 0 64px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 0 32px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .case-study__grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .case-study__image {
+          flex: 1;
+
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+
+        .case-study__content {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          padding-left: 20px;
+
+          .case {
+            background-color: #FFF;
+            border-radius: 16px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            h3 {
+              margin-bottom: 10px;
+            }
+
+            p {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .detail-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    fill: $button-color;
+  }
+
+
+  .project-details {
+    background-color: $background-color;
+    padding: 64px 0;
+    margin-top: 40px;
+  }
+
+  .project-details-header {
+    text-align: center;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+
+    color: #fff;
+    font-size: 36px;
+
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .detail-item {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    /* Necessary for absolute positioning of the icon */
+  }
+
+  .technology-list {
+    columns: 2;
+    /* Keeps the two-column format for the list */
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+  }
+
+  .technology-list li {
+    margin-bottom: 10px;
+  }
+
+  .detail-item h3 {
+    margin-bottom: 10px;
+    padding-right: 50px;
+    /* Adds padding to avoid overlap with the icon */
+  }
+
+  @media (max-width: 1024px) {
+    .details-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  .approach {
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 128px;
+
+      @media (max-width: 1024px) {
+        padding: 0 64px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 0 32px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .approach-item {
+        display: flex;
+        margin-bottom: 40px;
+        align-items: center;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.server-side {
+          flex-direction: row-reverse; // Text on the right, images on the left
+
+          .approach-text,
+          .approach-images {
+            flex: 1;
+          }
+        }
+
+        &.client-side {
+          flex-direction: row; // Text on the left, images on the right
+
+          .approach-text,
+          .approach-images {
+            flex: 1;
+          }
+        }
+
+        .approach-images {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: calc(33.333% - 6.666px); // Three images side by side with gaps
+            height: auto;
+            object-fit: cover;
+
+            @media (max-width: 1024px) {
+              width: calc(50% - 5px); // Two images side by side on smaller screens
+            }
+
+            @media (max-width: 768px) {
+              width: 100%;
+            }
+          }
+        }
+
+        .approach-text {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          h3 {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .project-review {
+    background-color: #EEE;
+    padding: 64px 0;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+
+      h2 {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .project-review-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+        @media (max-width: 1200px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+
+        .review-item {
+          background-color: #FFF;
+          border-radius: 16px;
+          padding: 20px;
+          box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+          position: relative;
+
+          h3 {
+            padding-top: 60px;
+            margin-bottom: 10px;
+          }
+
+          p {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
 
   .contact {
     background-color: $lighter-color;
