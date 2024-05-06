@@ -1,5 +1,5 @@
 $background-color: #00252F;
-$lighter-color: lighten($background-color, 5%);
+$lighter-color: lighten($background-color, 5%); // #003949
 $button-color: #0081a1;
 $darker-button: darken($button-color, 5%);
 
@@ -706,7 +706,7 @@ main {
 
 
   .project-details {
-    background-color: $background-color;
+    background-color: $lighter-color;
     padding: 64px 0;
     margin-top: 40px;
   }
@@ -761,6 +761,10 @@ main {
     margin-bottom: 10px;
     padding-right: 50px;
     /* Adds padding to avoid overlap with the icon */
+  }
+
+  .detail-item p {
+    margin-bottom: 7px;
   }
 
   @media (max-width: 1024px) {
